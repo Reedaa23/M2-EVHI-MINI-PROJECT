@@ -14,6 +14,10 @@ public class PlayerInteraction : MonoBehaviour
 
     private int collided = 0;
 
+    void Start()
+    {
+        this.GetComponent<Rigidbody>().velocity = Vector3.zero;
+    }
     void OnCollisionEnter(Collision col)
     {   
         List<string> firstFourLevels = new List<string>();

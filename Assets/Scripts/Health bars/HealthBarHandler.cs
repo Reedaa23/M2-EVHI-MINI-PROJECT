@@ -46,5 +46,6 @@ public class HealthBarHandler : MonoBehaviour
     private void Start()
     {
         HealthBarImage = GetComponent<Image>();
+        //Debug.Log(HealthBarImage.transform.position.x);
     }
 }
