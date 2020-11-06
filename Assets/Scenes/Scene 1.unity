@@ -377,9 +377,8 @@ GameObject:
   - component: {fileID: 1398214936}
   - component: {fileID: 1398214938}
   - component: {fileID: 1398214937}
-  - component: {fileID: 1398214939}
   m_Layer: 5
-  m_Name: HealthBar
+  m_Name: PlayerHealthBar
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -441,18 +440,6 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1398214935}
   m_CullTransparentMesh: 0
---- !u!114 &1398214939
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1398214935}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: b81648be751ed3b4cb11091dd6c14039, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1 &1470869646 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 600949784237898603, guid: 1274e596bc84b3941845211d1126c9bb,
@@ -475,8 +462,7 @@ MonoBehaviour:
   doorHinge2: {fileID: 0}
   door1: {fileID: 0}
   door2: {fileID: 0}
-  healthToken: {fileID: 0}
-  invicibilityToken: {fileID: 0}
+  healthBar: {fileID: 1398214937}
 --- !u!1 &1547098419
 GameObject:
   m_ObjectHideFlags: 0
