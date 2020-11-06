@@ -25,6 +25,7 @@ public class PlayerInteraction : MonoBehaviour
     private int moveSpeed = 4;
     private int minDist = 3;
 
+    //Health bar's color
      public void SetHealthBarValue(float value)
     {
         healthBar.fillAmount = value;
@@ -58,7 +59,9 @@ public class PlayerInteraction : MonoBehaviour
 
     void Start()
     {
+        //Full life at the beginning of each scene
         this.SetHealthBarValue(1.0f);
+        //Prevent from some unwanted bugs (due to collision)
         this.GetComponent<Rigidbody>().velocity = Vector3.zero;
     }
     void OnCollisionEnter(Collision col)
@@ -68,6 +71,7 @@ public class PlayerInteraction : MonoBehaviour
         firstFourLevels.Add("Scene 2");
         firstFourLevels.Add("Scene 3");
         firstFourLevels.Add("Scene 4");
+        //For the first four scenes, go to next scene by reaching the second room's floor of the active scene
         if(firstFourLevels.Contains(SceneManager.GetActiveScene().name))
         {
             if (col.gameObject.name == "Floor 2")
@@ -75,12 +79,14 @@ public class PlayerInteraction : MonoBehaviour
                 SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
             }
         }
+        //Change color if a health token is taken
         if (col.gameObject.name == "Health token")
         {
             this.SetHealthBarValue(1.0f);
             healthToken.SetActive(false);
             weapon.GetComponent<Renderer>().material.color = Color.red;
         }
+        //Change color if an invincibility token is taken
         else if (col.gameObject.name == "Invincibility token")
         {
             invincible = true;
@@ -88,7 +94,7 @@ public class PlayerInteraction : MonoBehaviour
             invincibilityToken.SetActive(false);
             StartCoroutine(SetFalse());
         }
-        
+        //Will be useful for opening the swinging doors
         if(SceneManager.GetActiveScene().name == "Scene 5")
         {
             if (col.gameObject.name == "Door 1" | col.gameObject.name == "Door 2")
@@ -105,10 +111,12 @@ public class PlayerInteraction : MonoBehaviour
 
     void OnCollisionExit(Collision col)
     {
+        //Back to original color
         if (col.gameObject.name == "Health token")
-            {
+        {
                 weapon.GetComponent<Renderer>().material.color = Color.grey;
-            }
+        }
+        //Will be useful for opening the swinging doors
         if(SceneManager.GetActiveScene().name == "Scene 5")
         {
             if (col.gameObject.name == "Door 1" | col.gameObject.name == "Door 2")
@@ -127,6 +135,12 @@ public class PlayerInteraction : MonoBehaviour
 
     void Update()
     {
+        //Press Esc to reach the menu at any moment
+        if(Input.GetKey(KeyCode.Escape))
+        {
+            SceneManager.LoadScene("Main menu");
+        }
+        //Scene 2 enemy movements
         if(SceneManager.GetActiveScene().name == "Scene 2")
         {
             if (toRight)
@@ -150,6 +164,7 @@ public class PlayerInteraction : MonoBehaviour
                     this.SetHealthBarValue(this.GetHealthBarValue() - 0.003f);
             }
         }
+        //Scene 3 enemy following and attacking the player
         else if (SceneManager.GetActiveScene().name == "Scene 3")
         {
             if(Vector3.Distance(enemy.transform.position,door1.transform.position) >= 4)
@@ -165,6 +180,7 @@ public class PlayerInteraction : MonoBehaviour
                 this.SetHealthBarValue(this.GetHealthBarValue() - 0.003f);
             }
         }
+        //Scene 4 fall damage
         else if (SceneManager.GetActiveScene().name == "Scene 4")
         {
             if (this.transform.position.y <= 20)
@@ -174,9 +190,10 @@ public class PlayerInteraction : MonoBehaviour
         }
         else if(SceneManager.GetActiveScene().name == "Scene 5")
         {
+            //Tokens rotating at any moment
             healthToken.transform.Rotate(1,0,0);
             invincibilityToken.transform.Rotate(1,0,0);
-
+            //Opening the swinging doors
             if (collided == 1 & doorHinge1.transform.rotation.eulerAngles.y <= 28)
             {
                 doorHinge1.transform.Rotate(0,1.5f,0);
@@ -197,15 +214,18 @@ public class PlayerInteraction : MonoBehaviour
                 door1.GetComponent<Renderer>().material.color = Color.blue;
                 door2.GetComponent<Renderer>().material.color = Color.blue;
             }
+            //When the scene 5 second room is fully enlightened
             if(roomLight.intensity >= 5.89f)
             {
                 if (dark)
                 {
+                    //Activate weapon, projectile and enemy health bar
                     weapon.SetActive(true);
                     projectile.SetActive(true);
                     slider.SetActive(true);
                 }
                 dark = false;
+                //Scene 3 enemy following and attacking the player
                 enemy.transform.LookAt(this.transform);
                 if(Vector3.Distance(enemy.transform.position,this.transform.position) > minDist)
                 {
@@ -216,6 +236,11 @@ public class PlayerInteraction : MonoBehaviour
                     this.SetHealthBarValue(this.GetHealthBarValue() - 0.003f);
                 }
             }
+        }
+        //When the player dies
+        if (this.GetHealthBarValue() <= 0)
+        {
+            SceneManager.LoadScene("Game over");
         }
         
     }

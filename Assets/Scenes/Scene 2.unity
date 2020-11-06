@@ -229,6 +229,16 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 517282952300538744, guid: 1274e596bc84b3941845211d1126c9bb,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 2.565118
+      objectReference: {fileID: 0}
+    - target: {fileID: 1517618242045002909, guid: 1274e596bc84b3941845211d1126c9bb,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 2.565118
+      objectReference: {fileID: 0}
     - target: {fileID: 3234844001945710192, guid: 1274e596bc84b3941845211d1126c9bb,
         type: 3}
       propertyPath: m_Name
@@ -335,6 +345,7 @@ MonoBehaviour:
   weapon: {fileID: 0}
   projectile: {fileID: 0}
   enemy: {fileID: 865936308}
+  slider: {fileID: 0}
 --- !u!4 &269603505 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 8251029639142682743, guid: 1274e596bc84b3941845211d1126c9bb,

@@ -43,7 +43,7 @@ public class TurningOnLight : MonoBehaviour
 		{
 			isClicked = true;
 		}
-
+		//Turn off the light
 		if(isClicked)
 		{
 			roomLight.intensity = Mathf.Lerp(roomLight.intensity, 6.0f, 0.02f);

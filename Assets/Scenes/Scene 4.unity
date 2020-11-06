@@ -806,6 +806,16 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 517282952300538744, guid: 1274e596bc84b3941845211d1126c9bb,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 2.565118
+      objectReference: {fileID: 0}
+    - target: {fileID: 1517618242045002909, guid: 1274e596bc84b3941845211d1126c9bb,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 2.565118
+      objectReference: {fileID: 0}
     - target: {fileID: 1586750074824904966, guid: 1274e596bc84b3941845211d1126c9bb,
         type: 3}
       propertyPath: m_LocalPosition.z
@@ -940,6 +950,11 @@ MonoBehaviour:
   doorHinge2: {fileID: 0}
   door1: {fileID: 0}
   door2: {fileID: 0}
-  healthToken: {fileID: 0}
-  invicibilityToken: {fileID: 0}
   healthBar: {fileID: 904214200}
+  healthToken: {fileID: 0}
+  invincibilityToken: {fileID: 0}
+  roomLight: {fileID: 0}
+  weapon: {fileID: 0}
+  projectile: {fileID: 0}
+  enemy: {fileID: 0}
+  slider: {fileID: 0}
