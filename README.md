@@ -1,48 +1,48 @@
-# M2-EVHI-MINITP
+# M2-EVHI-MINI-PROJECT
 
-Ce repo contient l'implémentation d'un mini-projet individuel consistant à développer un jeu sur Unity.
+This repository contains the implementation of an individual mini-project to develop a game on Unity.
 
-## Description du projet
+## Description of the project
 
-Le jeu doit posséder 5 niveaux :
+The game must have 5 levels:
 <ul>
-    <li>Niveau 1 : Entrer dans une salle, pousser un bouton. Le bouton ouvre une porte. Entrer au niveau 2.</li>
-    <li>Niveau 2 : Un ennemi est en mouvement devant la seconde porte. Il faut lui lancer des missiles pour le détruire. Puis pousser le bouton. Entrer au niveau 3.</li>
-    <li>Niveau 3 : Un ennemi poursuit l'utilisateur. Le bouton de sortie est dans un isoloir avec une porte ouverte. Il faut pousser le bouton. La porte se ferme. Entrer au niveau 4.</li>
-    <li>Niveau 4 : L'environnement possède des trous. Si l'utilisateur tombe, il perd de la vie. Arriver jusqu'au bouton. Pousser le bouton. Entrer au niveau 5.</li>
-    <li>Niveau 5 : L'utilisateur arrive devant des portes battantes. Il entre. Il n'y a pas de lumière mais un ajusteur de lumière rayonne. Il faut allumer la lumière. Quand la lumière est pleine, un ennemi avec une barre de vie se déplace. Il faut donc le toucher plusieurs fois. Si on le tue, on a gagné.</li>
+    <li>Level 1: Enter a room, push a button. The button opens a door. Enter level 2.</li>
+    <li>Level 2: An enemy is moving in front of the second door. You have to launch missiles to destroy him. Then push the button. Enter level 3.</li>
+    <li>Level 3: An enemy is chasing the user. The exit button is in a booth with an open door. Push the button. The door closes. Enter level 4.</li>
+    <li>Level 4: The environment has holes. If the user falls down, he takes damage and dies. Get to the button. Push the button. Enter level 5.</li>
+    <li>Level 5: The user arrives in front of swinging doors. He enters. There is no light but a light adjuster is shining. The light has to be switched on. When the light is full, an enemy with a life bar moves. You have to touch him several times. If you kill him, you win.</li>
 </ul>
 
-De plus, il faut :
+In addition, there has to be:
 <ul>
-    <li>Un personnage (première ou troisième personne).</li>
-    <li>L'utilisateur a une barre de vie.</li>
-    <li>Des tokens de vie qui modifient la couleur de l'utilisateur lorsque ce dernier en prend.</li>
-    <li>Des tokens d'invincibilité qui rendent l'utilisateur invulnérable aux ennemis pendant 10 secondes.</li>
-    <li>On doit pouvoir quitter le jeu à tout instant.</li>
-    <li>On doit utiliser le clavier et la souris pour se déplacer, ainsi que pour tirer.</li>
-    <li>Les ennemis doivent changer de couleur quand on les touche. L'utilisateur aussi quand il prend un token.</li>
-    <li>Les portes changent de couleur quand on les active.</li>
-    <li>Si l'utilisateur perd, il peut choisir s'il veut rejouer ou non.</li>
-    <li>Si l'utilisateur gagne, il est félicité puis le jeu se quitte.</li>
-    <li>On doit pouvoir build le jeu pour pouvoir lancer un exécutable.</li>
+    <li>A character (first or third person).</li>
+    <li>The user has a life bar.</li>
+    <li>Life tokens that heal the user when taken.</li>
+    <li>Invincibility tokens that make the user invulnerable to enemies for 10 seconds.</li>
+    <li>You must be able to quit the game at any time.</li>
+    <li>You have to use the keyboard and mouse to move around, as well as to shoot.</li>
+    <li>Enemies must change color when touched. The user’s color also has to change when they take a token.</li>
+    <li>Doors change color when they are activated.</li>
+    <li>If the user loses, he can choose if he wants to play again or not.</li>
+    <li>If the user wins, he is congratulated and then the game ends.</li>
+    <li>You must be able to build the game in order to run an executable.</li>
 </ul>
 
-## Informations supplémentaires sur cette implémentation du jeu
+## More information about the implementation of the game
 <ul>
-    <li>Les ennemis n'ont pas d'armes. Ils attaquent donc uniquement au corps à corps. L'utilisateur quant à lui ne peut attaquer qu'en tirant avec une arme (quand celle-ci est disponible).</li>
-    <li>Les munitions sont illimitées, et les armes ne nécessitent pas de rechargement.</li>
-    <li>Il n'y a pas de réticule, il faut donc viser par rapport à la caméra.</li>
+    <li>Enemies have no weapons. They therefore attack only in hand-to-hand combat. The user can only attack by firing a weapon (when available).</li>
+    <li>Ammunition is unlimited, and weapons do not require reloading.</li>
+    <li>There is no crosshair, so you have to aim at the camera.</li>
 </ul>
 
-### Commandes
+### Controls
 <ul>
-    <li>Se déplacer : Appuyer sur Z/Q/S/D ou les flèches directionnelles.</li>
-    <li>Courir : Maintenir la touche SHIFT.
-    <li>Sauter : Appuyer sur la touche ESPACE.</li>
-    <li>Orienter la caméra : Orienter la souris.
-    <li>Interagir/Tirer : Appuyer sur le clic gauche de la souris.</li>
-    <li>Menu : Appuyer sur la touche ECHAP.</li>
+    <li>Move: Press Z/Q/S/D or the directional arrows.</li>
+    <li>Run: Hold the SHIFT key.</li>
+    <li>Jump: Press the SPACE key.</li>
+    <li>Orient the camera: Orient the mouse.</li>
+    <li>Interact/Shoot: Press the left mouse button.</li>
+    <li>Menu: Press the ESCAPE key.</li>
 </ul>
 
-Note : Le jeu est volontairement simple à finir. Bon jeu !
+Note: The game is deliberately simple to finish. Have a good game!
