@@ -1,6 +1,6 @@
-# M2-EVHI-MINI-PROJECT
+# Mini-game-in-Unity
 
-This repository contains the implementation of an individual mini-project to develop a game on Unity.
+This repository contains the implementation of an individual mini-project to develop a game in Unity.
 
 ## Description of the project
 
